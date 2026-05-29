@@ -23,4 +23,4 @@ https://your-username.github.io/calculator/
 4. Use "C" to clear
 
 ## 🙌 Author
-Your Name
+PAVIVARSHINI RAVI
