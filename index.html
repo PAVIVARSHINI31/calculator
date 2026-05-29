@@ -3,81 +3,99 @@
 <head>
     <title>Calculator</title>
 
+    <!-- ✅ IMPORTANT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
-    text-align: center;
-    font-family: 'Segoe UI', sans-serif;
-    margin-top: 100px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+        }
 
-.calc {
-    display: inline-block;
-    padding: 25px;
-    border-radius: 15px;
-    background: #962953;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
+        .calc {
+            width: 90%;
+            max-width: 320px;
+            padding: 20px;
+            border-radius: 15px;
+            background: #962953;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
 
-input {
-    width: 180px;
-    height: 40px;
-    margin-bottom: 15px;
-    text-align: right;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    padding: 5px;
-    font-size: 18px;
-    outline: none;
-    background-color: #d48eb7;
-}
+        input {
+            width: 100%;
+            height: 45px;
+            margin-bottom: 15px;
+            text-align: right;
+            border-radius: 8px;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #d48eb7;
+        }
 
-button {
-    width: 45px;
-    height: 45px;
-    margin: 5px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    background: #f1f1f1;
-    transition: 0.2s;
-}
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
 
-button:hover {
-    background: #667eea;
-    color: white;
-}
+        button {
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            background: #f1f1f1;
+            transition: 0.2s;
+        }
 
-/* Equal button highlight */
+        button:hover {
+            background: #667eea;
+            color: white;
+        }
 
+        /* Mobile tweak */
+        @media (max-width: 400px) {
+            button {
+                height: 45px;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
 <div class="calc">
-    <input type="text" id="display" readonly><br>
+    <input type="text" id="display" readonly>
 
-    <button onclick="press('1')">1</button>
-    <button onclick="press('2')">2</button>
-    <button onclick="press('3')">3</button>
-    <button onclick="press('+')">+</button><br>
+    <div class="buttons">
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('+')">+</button>
 
-    <button onclick="press('4')">4</button>
-    <button onclick="press('5')">5</button>
-    <button onclick="press('6')">6</button>
-    <button onclick="press('-')">-</button><br>
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('-')">-</button>
 
-    <button onclick="press('7')">7</button>
-    <button onclick="press('8')">8</button>
-    <button onclick="press('9')">9</button>
-    <button onclick="press('*')">*</button><br>
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('*')">*</button>
 
-    <button onclick="press('0')">0</button>
-    <button onclick="calculate()">=</button>
-    <button onclick="clearDisplay()">C</button>
-    <button onclick="press('/')">/</button>
+        <button onclick="press('0')">0</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="press('/')">/</button>
+    </div>
 </div>
 
 <script>
