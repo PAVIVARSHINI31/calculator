@@ -1,54 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Calculator</title>
+    <title>Pastel Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
             margin: 0;
         }
 
         .calc {
             width: 90%;
-            max-width: 320px;
+            max-width: 350px;
             padding: 20px;
             border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(15px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            animation: fadeIn 0.8s ease-in-out;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 0.5s ease;
         }
 
-        /* Animation */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         input {
             width: 100%;
-            height: 50px;
+            height: 60px;
             margin-bottom: 15px;
             text-align: right;
-            border-radius: 10px;
+            border-radius: 12px;
             border: none;
             padding: 10px;
-            font-size: 20px;
-            background: rgba(255,255,255,0.2);
-            color: white;
+            font-size: 24px;
+            background: rgba(255,255,255,0.6);
+            color: #333;
             outline: none;
         }
 
@@ -60,62 +57,52 @@
 
         button {
             width: 100%;
-            height: 55px;
+            height: 60px;
             border: none;
             border-radius: 12px;
-            font-size: 18px;
+            font-size: 20px;
             cursor: pointer;
-            background: rgba(255,255,255,0.2);
-            color: white;
+            background: rgba(255,255,255,0.4);
+            color: #333;
             transition: all 0.2s ease;
         }
 
-        /* Hover effect */
         button:hover {
-            background: #ffffff;
-            color: #764ba2;
-            transform: scale(1.05);
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.7);
         }
 
-        /* Click animation */
         button:active {
             transform: scale(0.95);
         }
 
-        /* Operator buttons */
+        /* Operators */
         button:nth-child(4n) {
-            background: #ff7a18;
+            background: #ff9a9e;
+            color: white;
         }
 
-        button:nth-child(4n):hover {
-            background: #ffb347;
-            color: black;
-        }
-
-        /* Equal button */
+        /* Equal */
         button:nth-child(14) {
-            background: #00c9a7;
-        }
-
-        button:nth-child(14):hover {
-            background: #00f2c3;
+            background: #55efc4;
             color: black;
         }
 
-        /* Clear button */
+        /* Clear */
         button:nth-child(15) {
-            background: #ff4b5c;
+            background: #ff7675;
+            color: white;
         }
 
-        button:nth-child(15):hover {
-            background: #ff7b89;
-            color: black;
-        }
+        /* Mobile */
+        @media (max-width: 480px) {
+            input {
+                height: 50px;
+                font-size: 20px;
+            }
 
-        /* Mobile tweak */
-        @media (max-width: 400px) {
             button {
-                height: 45px;
+                height: 50px;
                 font-size: 16px;
             }
         }
